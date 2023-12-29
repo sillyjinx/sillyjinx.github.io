@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kira's Japanese Website</title>
-    <style>
+        <style>
       body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'Noto Sans JP', sans-serif; /* Use a Japanese-inspired font */
         margin: 0;
         padding: 0;
-        background: url('OIP.jpg') no-repeat center center fixed;
+        background: url('path/to/your/high-quality-japanese-background-image.jpg') no-repeat center center fixed;
         background-size: cover;
         background-color: #333;
         color: white;
@@ -26,12 +26,16 @@
         color: white;
         padding: 10px;
         text-align: center;
+        position: fixed; /* Fixed position at the bottom */
+        width: 100%;
+        bottom: 0;
       }
 
       nav a {
         color: white;
         text-decoration: none;
         margin: 0 15px;
+        font-family: 'Noto Sans JP', sans-serif; /* Use the same Japanese-inspired font for the navigation */
       }
 
       main {
@@ -41,6 +45,7 @@
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
+        margin-bottom: 60px; /* Adjust margin to accommodate the fixed navigation at the bottom */
       }
 
       footer {
