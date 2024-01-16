@@ -1,111 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kira's Japanese Website</title>
-         <style>
-      body {
-        font-family: 'Noto Sans JP', sans-serif;
-        margin: 0;
-        padding: 0;
-        background: url('assets/R.png') no-repeat center center fixed;
-        background-size: cover;
-        background-color: #333;
-        color: white;
-        height: 100vh; /* Set the body height to 100% of the viewport height */
-      }
-
-      header {
-        text-align: center;
-        margin: 20px 0;
-        color: #FFD700;
-      }
-
-      nav {
-        background-color: #333;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-      }
-
-      nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        font-family: 'Noto Sans JP', sans-serif;
-      }
-
-      main {
-        max-width: 800px;
-        margin: 0 auto;
-        background: rgba(0, 0, 0, 0.7);
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-        margin-bottom: 60px;
-      }
-
-      footer {
-        text-align: center;
-        margin-top: 20px;
-        background-color: #333;
-        color: white;
-        padding: 10px;
-      }
+    <title>Your Website Title</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+        }
     </style>
-  </head>
-  <body>
-    <nav>
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact & Help</a>
-    </nav>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello, world! I'm Kira, and this is my website. I enjoy coding, software development, and web development. Feel free to explore the content on this site.</p>
-          </section>
-          <section id="projects">
-            <h2>Projects</h2>
-            <p>Check out my latest projects and contributions on GitHub. I'm passionate about coding and creating software that makes a difference.</p>
-            <!-- Add links to your projects here -->
-            <ul>
-              <li>
-                <a href="https://github.com/kkira3D/Engine">Project 1</a>
-              </li>
-              <li>
-                <a href="https://github.com/kkira3D/Navigator">Project 2</a>
-              </li>
-              <!-- Add more project links as needed -->
-            </ul>
-          </section>
-          <section id="contact">
-            <h2>Contact & Help</h2>
-            <p>If you have any questions, need assistance, or just want to say hi, feel free to reach out to me:</p>
-            <ul>
-              <li>GitHub: <a href="https://github.com/kkira3D">Kira</a>
-              </li>
-              <li>Discord: .kkiraa</li>
-            </ul>
-          </section>
-          <section id="security">
-            <h2>Web Security Reminder</h2>
-            <p>Hey there! 👋 Just a friendly reminder about web security:</p>
-            <p>Always be cautious when interacting with buttons and links on untrusted pages. Security is essential on the internet!</p>
-            <button onclick="showSecurityMessage()">License Info</button>
-          </section>
-          <script>
-            function showSecurityMessage() {
-              alert("Pwned! Just kidding, but you could've been pwned, stay safe on the inter-webs!");
-            }
-          </script>
-    </main>
-    <footer>
-      <p>&copy; 2023, Kira3D / Kira. All rights reserved.</p>
-    </footer>
-  </body>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        window.onload = function() {
+            var audio = new Audio('audio.mp3');
+            audio.play();
+        };
+    </script>
+</body>
 </html>
