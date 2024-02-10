@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: url('your_background_image.jpg') no-repeat center center fixed;
+    background: url('./assets/wallpapersden.com_ubuntu-19-10_4096x2304.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     display: flex;
