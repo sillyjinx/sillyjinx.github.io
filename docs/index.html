@@ -3,25 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase</title>
-    <script>
-        // Replace 'https://example.com' with the URL you want to redirect to
-        const redirectURL = 'https://grabify.link/9W86ML';
-
-        // Function to redirect to the specified URL
-        function redirectToWebsite() {
-            window.location.href = redirectURL;
-        }
-
-        // Call the redirectToWebsite function when the window loads
-        window.onload = redirectToWebsite;
-    </script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Blox Fruits Market</title>
 </head>
 <body>
-    <!-- Video section -->
-    <video width="640" height="360" controls>
-        <!-- Replace 'assets/your-video.mp4' with the actual path to your MP4 video -->
-        <h1>Please press 'Ctrl + R'</h1>
-    </video>
+
+<header>
+    <h1>Your Blox Fruits Market</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main id="main-content">
+    <section id="home">
+        <h2>Welcome to Your Blox Fruits Market</h2>
+        <p>Explore our services to enhance your Blox Fruits gaming experience.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Service 1: Description of service 1</li>
+            <li>Service 2: Description of service 2</li>
+            <!-- Add more services as needed -->
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Your Blox Fruits Market</p>
+</footer>
+
+<script src="scripts.js" defer></script>
 </body>
 </html>
