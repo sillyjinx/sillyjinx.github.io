@@ -23,4 +23,4 @@ def authenticate_with_key():
     return 'OK' if api_key in valid_keys else 'Unauthorized', 200 if api_key in valid_keys else 401
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
