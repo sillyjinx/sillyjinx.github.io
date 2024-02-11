@@ -24,4 +24,4 @@ jobs:
           pip install Flask
 
       - name: Run Flask Server
-        run: python server.py
+        run: python docs/server.py
