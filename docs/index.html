@@ -6,19 +6,36 @@
     <title>Script Hub</title>
     <style>
         body {
+            background-image: url('blob:https://wallpapers.com/e13ee5d6-54b0-4133-9258-db6c3e5780b8'); /* Add your background image URL */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
             font-family: 'Arial', sans-serif;
-            margin: 20px;
         }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
         h1 {
             color: #333;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
         }
+
         li {
             margin-bottom: 10px;
         }
+
         a {
             text-decoration: none;
             color: #007bff;
@@ -26,8 +43,10 @@
     </style>
 </head>
 <body>
-    <h1>Script Hub</h1>
-    <ul id="scriptList"></ul>
+    <div class="container">
+        <h1>Script Hub</h1>
+        <ul id="scriptList"></ul>
+    </div>
 
     <script>
         // Example script data, replace this with your actual script data
@@ -46,7 +65,7 @@
 
                 link.href = `https://kkira3d.github.io/scripts/${script.name}/${script.filename}`;
                 link.textContent = script.name;
-                
+
                 listItem.appendChild(link);
                 scriptList.appendChild(listItem);
             });
