@@ -1,2 +1,34 @@
-github: ["kkira3D"]
-custom: ["Instead of paying me, support me by just fork & star this repo!"]
+name: Funding
+
+on:
+  workflow_run:
+    workflows: ["Check for Funding"]
+    types:
+      - completed
+
+jobs:
+  check-funding:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Check Funding
+        id: funding-check
+        uses: actions/stale@v2
+        with:
+          stale-issue-message: |
+            Thanks for considering supporting this project! Your contributions help maintain and improve it.
+
+          days-before-stale: 30
+
+      - name: Add Support Link
+        run: echo "If you'd like to support us, please don't give me your money, just star and follow my github, and this repo!" >> $GITHUB_WORKSPACE/ISSUE_TEMPLATE/funding.md
