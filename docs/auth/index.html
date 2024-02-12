@@ -1,0 +1,45 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>womp womp, you got doxxed!</title>
+</head>
+<body>
+    <h1>Welcome to the Authentication Page!</h1>
+
+    <script>
+        // JavaScript code to extract and use the 'hwid' parameter from the URL
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to get the value of a URL parameter by name
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+            // Get the 'hwid' parameter from the URL
+            var hwidValue = getParameterByName('hwid');
+
+            // Display the 'hwid' value in the console (you can modify this part)
+            console.log('HWID:', hwidValue);
+
+            // You can perform further actions with the 'hwid' value as needed
+            // For example, send it to a server for authentication or other processing
+
+            // Redirect the user to another website after a short delay (adjust as needed)
+            var redirectUrl = 'https://example.com'; // Change this to your desired website
+            setTimeout(function () {
+                window.location.href = redirectUrl;
+            }, 1000); // Redirect after 3 seconds (adjust as needed)
+        });
+    </script>
+</body>
+</html>
