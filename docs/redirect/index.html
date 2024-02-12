@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    <script>
+        // Function to extract the value of the 'link' parameter from the URL
+        function getParameterByName(name, url) {
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Get the 'link' parameter value from the URL
+        var redirectLink = getParameterByName('link', window.location.href);
+
+        // If the 'link' parameter is present, redirect to the specified URL
+        if (redirectLink) {
+            window.location.href = redirectLink;
+        } else {
+            // If no 'link' parameter is found, you can add fallback behavior or display a message
+            console.log("No redirect link found.");
+        }
+    </script>
+</head>
+<body>
+    <!-- You can customize the content of the page if needed -->
+    <h1>Redirecting...</h1>
+</body>
+</html>
