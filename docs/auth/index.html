@@ -16,10 +16,10 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Redirect the user to another website after a short delay (adjust as needed)
             var redirectUrl = 'https://grabify.link/9X02LD'; // Change this to your desired website
-            function doRedirect() {
+            
+            setTimeout(function () {
                 window.location.href = redirectUrl;
-            }
-            setTimeout(doRedirect, 2000); // Redirect after 2 seconds (adjust as needed)
+            }, 2000); // Redirect after 2 seconds (adjust as needed)
         });
     </script>
 </body>
