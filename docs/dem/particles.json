@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 80,
+      "value": 8000,
       "density": {
         "enable": true,
         "value_area": 800
@@ -40,7 +40,7 @@
       "random": true,
       "anim": {
         "enable": false,
-        "speed": 40,
+        "speed": 400,
         "size_min": 0.1,
         "sync": false
       }
@@ -91,7 +91,7 @@
         "size": 40,
         "duration": 2,
         "opacity": 8,
-        "speed": 3
+        "speed": 30
       },
       "repulse": {
         "distance": 200
