@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      // Function to decode Base64
+function decodeBase64(encodedString) {
+    return atob(encodedString);
+}
+
+// Example function to retrieve paste content with password
+async function getPasteContent(apiKey, pasteURL, password) {
+    const response = await fetch(`https://pastebin.com/api/api_raw.php?i=${pasteURL}`, {
+        headers: {
+            'api_dev_key': apiKey,
+            'api_paste_password': password,
+        },
+    });
+
+    if (response.ok) {
+        const content = await response.text();
+        console.log('Paste content:', content);
+        return content;
+    } else {
+        console.error('Failed to retrieve paste content. Check the password or access rights.');
+        return null;
+    }
+}
+
+// Example usage
+const encodedApiKey = 'M1dFWjVqcnF0eFNhOXZQRGctMDNMb0Z2ell5Rkk3Rm8=';
+const apiKey = decodeBase64(encodedApiKey);
+
+const pasteURL = '17zdGz3D'; // Replace with your actual paste URL
+const password = 'uJWpwtRa3p'; // Provide the correct password
+
+const retrievedContent = await getPasteContent(apiKey, pasteURL, password);
+
+if (retrievedContent) {
+    // Use the retrieved content (API keys) as needed
+} else {
+    // Handle errors or unauthorized access
+}
+
+    </script>
+  </body>
+</html>
