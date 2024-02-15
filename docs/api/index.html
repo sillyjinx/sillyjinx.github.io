@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Generator</title>
+</head>
+<body>
 
+<script>
+// Function to generate a key with an exact 24-hour duration in JavaScript
+function generateKey() {
+    // Set expiration time to be exactly 24 hours from the current time
+    const expirationTime = Date.now() + (24 * 60 * 60 * 1000);  // 24 hours in milliseconds
+
+    // Convert expirationTime to a hexadecimal string
+    const expirationHex = expirationTime.toString(16).toUpperCase();
+
+    // Generate the key by combining the prefix and expiration time
+    const key = 'MXLLY-' + expirationHex;
+
+    return key;
+}
+
+// Example usage
+const generatedKey = generateKey();
+console.log('Generated Key:', generatedKey);
+</script>
+
+</body>
+</html>
