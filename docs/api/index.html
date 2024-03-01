@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Key Generation and Validation Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 </head>
 <body>
     <script>
@@ -12,8 +13,8 @@
             var currentTime = Math.floor(new Date().getTime() / 1000);
             
             // Set the key as a cookie for 15 seconds
-            document.cookie = "softwareKey=" + currentTime + "; max-age=15";
-            
+            Cookies.set("softwareKey", currentTime, { expires: 15 });
+
             console.log("Key generated and set as cookie:", currentTime);
         }
 
@@ -22,7 +23,7 @@
             var serverUrl = 'http://localhost:3000/checkKey';
             
             // Retrieve the stored key from the cookie and parse it as an integer
-            var storedKey = parseInt(document.cookie.split('=')[1]);
+            var storedKey = parseInt(Cookies.get("softwareKey"));
 
             // Log both storedKey and clientKey for troubleshooting
             console.log("Stored Key:", storedKey);
