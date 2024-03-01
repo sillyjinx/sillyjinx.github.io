@@ -22,8 +22,8 @@
             // Assuming the server is running on localhost:3000
             var serverUrl = 'http://localhost:3000/checkKey';
             
-            // Retrieve the stored key from the cookie and parse it as an integer
-            var storedKey = parseInt(Cookies.get("softwareKey"));
+            // Retrieve the stored key from the cookie
+            var storedKey = Cookies.get("softwareKey");
 
             // Log both storedKey and clientKey for troubleshooting
             console.log("Stored Key:", storedKey);
