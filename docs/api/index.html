@@ -25,13 +25,17 @@
             // Retrieve the stored key from the cookie
             var storedKey = Cookies.get("softwareKey");
 
-            // Log both storedKey and clientKey for troubleshooting
+            // Log the stored key for troubleshooting
             console.log("Stored Key:", storedKey);
 
             // Make a cross-origin request with credentials
-            fetch(serverUrl + `?key=${storedKey}`, {
-                method: 'GET',
+            fetch(serverUrl, {
+                method: 'POST',
                 credentials: 'include', // Include credentials (cookies)
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ key: storedKey }),
             })
             .then(response => {
                 if (!response.ok) {
