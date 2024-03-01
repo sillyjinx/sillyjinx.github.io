@@ -17,19 +17,12 @@
             console.log("Key generated and set as cookie:", currentTime);
         }
 
-        function getCookie(name) {
-            // Helper function to retrieve a cookie value by name
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        }
-
         function checkKey() {
             // Assuming the server is running on localhost:3000
             var serverUrl = 'http://localhost:3000/checkKey';
             
             // Retrieve the stored key from the cookie and parse it as an integer
-            var storedKey = parseInt(getCookie('softwareKey'));
+            var storedKey = parseInt(document.cookie.split('=')[1]);
 
             // Log both storedKey and clientKey for troubleshooting
             console.log("Stored Key:", storedKey);
