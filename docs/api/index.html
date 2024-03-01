@@ -18,34 +18,28 @@
             console.log("Key generated and set as cookie:", currentTime);
         }
 
-        function checkKey() {
-            // Assuming the server is running on localhost:3000
-            var serverUrl = 'http://localhost:3000/checkKey';
-            
-            // Retrieve the stored key from the cookie
-            var storedKey = Cookies.get("softwareKey");
+       function checkKey() {
+        // Assuming the server is running on localhost:3000
+        var serverUrl = 'http://localhost:3000/checkKey';
 
-            // Log the stored key for troubleshooting
-            console.log("Stored Key:", storedKey);
-
-            // Make a cross-origin request with credentials
-            fetch(serverUrl, {
-                method: 'POST',
-                credentials: 'include', // Include credentials (cookies)
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ key: storedKey }),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(result => console.log(result))
-            .catch(error => console.error('Error:', error));
-        }
+        // Make a cross-origin request with credentials
+        fetch(serverUrl, {
+            method: 'POST',
+            credentials: 'include', // Include credentials (cookies)
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({}),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(result => console.log(result))
+        .catch(error => console.error('Error:', error));
+    }
 
         // Call the functions when the page loads
         generateKey();
