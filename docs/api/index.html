@@ -3,29 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key Generator</title>
+    <title>Key Generation Test</title>
 </head>
 <body>
+    <script>
+        function generateKey() {
+            // Using os.time() or a timestamp for key generation
+            var currentTime = Math.floor(new Date().getTime() / 1000);
+            
+            // Create a unique key (you can modify this based on your requirements)
+            var generatedKey = "KEY_" + currentTime;
 
-<script>
-// Function to generate a key with an exact 24-hour duration in JavaScript
-function generateKey() {
-    // Set expiration time to be exactly 24 hours from the current time
-    const expirationTime = Date.now() + (24 * 60 * 60 * 1000);  // 24 hours in milliseconds
+            // Set the key as a cookie for 15 seconds
+            document.cookie = "softwareKey=" + generatedKey + "; max-age=15";
+            
+            console.log("Key generated and set as cookie:", generatedKey);
+        }
 
-    // Convert expirationTime to a hexadecimal string
-    const expirationHex = expirationTime.toString(16).toUpperCase();
-
-    // Generate the key by combining the prefix and expiration time
-    const key = 'MXLLY-' + expirationHex;
-
-    return key;
-}
-
-// Example usage
-const generatedKey = generateKey();
-console.log('Generated Key:', generatedKey);
-</script>
-
+        // Call the function when the page loads
+        generateKey();
+    </script>
 </body>
 </html>
